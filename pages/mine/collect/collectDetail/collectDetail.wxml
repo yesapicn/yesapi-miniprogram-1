@@ -1,0 +1,33 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title" wx:if="{{status == 0}}">订单信息</view>
+        <view class="page__title" wx:if="{{status == 1}}">订单待发货</view>
+        <view class="page__title" wx:if="{{status == 2}}">订单已发货！</view>
+        <view class="page__title" wx:if="{{status == 3}}">订单待付款</view>
+        <view class="page__desc">如有疑惑可联系客服咨询详情</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="kind-list">
+            <block wx:for="{{list}}" wx:key="id">
+                <view class="kind-list__item">
+                    <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+                        <view class="weui-flex__item">{{item.name}}</view>
+                        <image class="kind-list__img" src="images/icon_nav_{{item.id}}.png"></image>
+                    </view>
+                    <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+                        <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+                            <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                                    <view class="weui-cell__bd order_info" style='font-size:16px;'>{{page}}</view>
+                                    <view class="weui-cell__ft"></view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <button class="goods-detail-bot-btn-contact-btn" open-type='contact'>
+        <image src='../../../../resource/images/phone.png' style='width:30px;height:30px;'></image>
+        客服
+      </button>
+</view>

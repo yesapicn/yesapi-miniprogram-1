@@ -1,0 +1,122 @@
+<view class="container paddingBottom3" style="display: {{loading.isViewHidden ? 'none' : 'block'}}">
+
+  <!-- 轮滑图 -->
+  <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='true' style="height:{{pageSetting.swiperHeight}}rpx">
+    <block wx:for="{{swiperData}}">
+      <swiper-item>
+        <image src="{{item.imgUrl}}" class="swiper-image" mode="aspectFit" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- 茶的信息 -->
+  <view class="goods-info">
+    <text class="price">¥{{goodsData.tea_price}}</text>
+    <text class="title">{{goodsData.tea_name}}</text>
+  </view>
+  <view class="goods-detail-desc">
+    <text class="title">商品描述</text>
+    <view class="desc">
+      <text class="display-block">{{goodsData.tea_desc}}</text>
+    </view>
+  </view>
+
+  <!-- 图片列表 -->
+  <view class='imgList'>
+    <block wx:for="{{imgList}}">
+      <image src="{{item.imgUrl}}" class='imgList-img' mode="scaleToFill" lazy-load="true" />
+    </block>
+  </view>
+  <view class="goods-detail-bot-btn">
+    <view class="goods-detail-bot-btn-contact">
+      <button class="goods-detail-bot-btn-contact-btn" open-type='contact'>
+        <image src='../../resource/images/phone.png' style='width:30px;height:30px;'></image>
+        客服
+      </button>
+    </view>
+    <view class="goods-detail-bot-btn-joinCart" data-id="{{goodsData.id}}" data-tea_titlepage="{{goodsData.tea_titlepage}}" data-tea_name="{{goodsData.tea_name}}" data-tea_price="{{goodsData.tea_price}}" catchtap="joinCart">
+      加入购物车
+    </view>
+    <view class="goods-detail-bot-btn-buyNow" catchtap="openCartPage">
+      壕一把！
+    </view>
+  </view>
+
+</view>
+<!-- loading -->
+<loading hidden="{{loading.hidden}}">{{loading.msg}}</loading>
+<toast hidden="{{toast.hidden}}" icon="{{toast.icon}}" duration="3000" bindchange="toastChange">{{toast.msg}}</toast>
+<template is="collect" data="{{...collect}}"></template>
+
+<!-- 加入购物车 -->
+<scroll-view animation="{{animationData}}" class="join_shopping_cart_view" scroll-y="true">
+
+  <!-- address -->
+  <view class="address">
+    <view class="address-plus" wx:if="{{addressInfo == null}}" bindtap="chooseAddress">
+      <image src='../../resource/images/plus1.png' style='width:60px;height:60px;'></image>
+      <text class="address-add">一键添加地址</text>
+    </view>
+    <view class="address-detail" wx:else="{{addressInfo != null}}" bindtap="chooseAddress">
+      <view class='address-detail-text'>
+        <text>{{addressInfo.userName}} <text class="address-phone">{{addressInfo.telNumber}} </text>\n</text>
+        <text style='font-size: 12px;'>{{addressInfo.provinceName}}{{addressInfo.cityName}}{{addressInfo.countyName}}{{addressInfo.detailInfo}}\n</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods_info">
+    <view class="img_view">
+      <image src="{{goodsData.tea_titlepage}}" class="img" mode="aspectFit"></image>
+    </view>
+    <view class="item_info">
+      <text class="title">{{goodsData.tea_name}}</text>
+      <text class="selece_text_flag">已选</text>
+      <view class="row row-1">
+        <text class="text price">¥{{goodsData.tea_price}}</text>
+      </view>
+      <view class="row row-2">
+        <text class="text size">数量：{{curSizes.size}}</text>
+        <text class="text number">x{{goodsNumberInput}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="goods_tip" wx:if="{{goodsData.tag_desc.length > 0}}">
+    <text class="display-block" wx:for-items="{{goodsData.tag_desc}}">{{item}}</text>
+  </view>
+
+
+
+
+  <view class="select_class">
+    <!-- mark -->
+    <view class="category">
+      <text class="name">订单备注</text>
+      <view class="cls_view">
+        <textarea class="weui-textarea" name="content" value='{{content}}' style='height:60px;' bindinput="listenercontent" placeholder="选填，请先和商家协商一致" />
+      </view>
+    </view>
+    <view class="category">
+      <text class="name">数量</text>
+      <view class="sele_num">
+        <text class="minus btn fa fa-minus" data-type="minus" catchtap="change_goods_number">-</text>
+        <input bindinput="" value="{{goodsNumberInput}}" class="hideInput" disabled/>
+        <text class="add btn fa fa-plus" data-type="add" catchtap="change_goods_number">+</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="goods-detail-bot-btn">
+    <view class="goods-detail-bot-btn-Order-blank">
+      <text class='Order-blank-num'>共{{goodsNumberInput}}件，</text>
+      <text class='Order-blank-price'>合计<text style='font-size:20px;'>{{goodsNumberInput * goodsData.tea_price}}</text>.00</text>
+    </view>
+    <view class="goods-detail-bot-btn-Order" catchtap="details_bot_opts">
+      壕一把
+    </view>
+
+  </view>
+
+  <view class="close_select_cls" data-type="{{mark}}" catchtap="closePageAnimate">关闭</view>
+
+</scroll-view>

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/mine/shopcar/shopcar",
+    "pages/mine/collect/collect",
+    "pages/mine/collect/collectDetail/collectDetail",
+    "pages/goodsDetail/detail",
+    "pages/main/main",
+    "pages/upload/upload"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "潮峰茶行",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#21a675",
+    "color": "#dbdcdc",
+    "selectedColor": "#f1e63b",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "resource/images/ic_tabbar_normal2.png",
+        "selectedIconPath": "resource/images/ic_tabbar_selected2.png"
+      },
+      {
+        "pagePath": "pages/main/main",
+        "text": "发现",
+        "iconPath": "resource/images/tabbar_cart.png",
+        "selectedIconPath": "resource/images/tabbar_cart_selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "resource/images/ic_tabbar_normal4.png",
+        "selectedIconPath": "resource/images/ic_tabbar_selected4.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 5000
+  },
+  "sitemapLocation": "sitemap.json"
+}

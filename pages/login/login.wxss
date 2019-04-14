@@ -1,0 +1,29 @@
+
+.header {
+  margin: auto;
+  overflow:hidden;  
+  display: block;  
+  width: 160rpx;  
+  height: 160rpx;  
+  border-radius: 5px;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  margin-top: 150px;
+  margin-bottom: 20px;
+}
+ 
+.content {
+    margin-left: 50rpx;
+    margin-bottom: 90rpx;
+}
+ 
+.content text {
+    display: block;
+    color: #9d9d9d;
+    margin-top: 40rpx;
+}
+ 
+.bottom {
+    border-radius: 80rpx;
+    margin: 70rpx 50rpx;
+    font-size: 35rpx;
+}

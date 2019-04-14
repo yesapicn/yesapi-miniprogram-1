@@ -1,0 +1,72 @@
+
+
+<scroll-view class="box" scroll-y="true"
+             lower-threshold="50"
+             style="height:{{systemInfo.windowHeight}}px; display: {{'block'}}"
+             bindscrolltolower="scrollLoading"
+              lower-threshold="300">
+
+
+  <!--背景小图标-->
+  <view class="bghead"  mode='aspectFill'>
+          <image class="takephotoimg" bindtap='bindAdd'
+                 src='../../resource/images/Camaro.png' mode="scaleToFill" >
+          </image>
+  </view>
+
+<image src='http://cdn7.okayapi.com/0D19F4F8568B4232213F87FC45C03253_20190407154338_0d4f109b3f328cf7384afba2e2875b66.jpeg'  mode="scaleToFill" style='width:100%'></image>
+
+<view class="content">
+  <block   wx:for="{{momentsData}}"  wx:key="item">
+
+    <block wx:if="{{item.id}}">
+      <view class="head">
+        <!--头像-->
+        <image class="baseimg"  src="{{item.moment_headimg}}" mode="scaleToFill"></image>
+      </view>
+      <!--昵称-->
+      <text class="wz">{{item.moment_nickname}}</text>
+
+    </block>
+    
+    <!--内容-->
+    <text class="desc" bindtap="detailpage" data-id="{{item.moment_id}}">{{item.moment_content}}</text>
+
+    <block wx:if="{{item.moment_picture6 != 'null'}}">
+            <view class="images-wrapper">
+                <view class="images-list">
+                  <block wx:for="{{item.moment_picture6}}" wx:for-item="image">
+                    <block wx:if="{{item.moment_picture6.length == 1}}">
+                       <image src="{{image}}" mode='aspectFill' class="images-image-one" data-src="{{image}}" data-model="{{item}}"  bindtap="previewImage"></image>
+                    </block>
+                    <block wx:else wx:if="{{image != 'undefined'}}">
+                      <image src="{{image}}" mode='aspectFill' class="images-image" data-src="{{image}}" data-model="{{item.moment_picture6}}" bindtap="previewImage"></image>
+                      </block>
+                  </block>
+                </view>
+          </view>
+    </block> 
+
+
+    <!--显示地址-->
+    <block wx:if="{{item.moment_place != 'false'}}">
+        <text class="address">{{item.moment_place}}</text>
+    </block>
+
+
+    <!--点赞评论标签-->
+    <!-- <view class="caozuo" style="top:{{cz_top}}px;right:{{cz_right}}rpx;"
+          animation="{{animationData}}">
+        <text class="dianzan" bindtap="bindDianZan">点赞</text>
+    </view> -->
+
+  </block>
+</view>
+
+
+
+
+
+
+</scroll-view>
+

@@ -1,0 +1,118 @@
+<!--order.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="warp">
+            <template name="itmes">
+              <view data-id="{{id}}" bindtap="showOrderDetailPage" hover-class="navigator-hover">
+                <view class="imgs">
+                  <image src="{{order_img}}" class="in-img" background-size="cover" model="scaleToFill"></image>
+                </view>
+                <view class="infos">
+                  <view class="title">{{order_goods}}</view>
+                  <view>
+                    <view class="status" wx:if="{{order_status == 1}}">待发货</view>
+                    <view class="status" style='color:green' wx:if="{{order_status == 2}}">已发货</view>
+                    <view class="status" style='color:black' wx:if="{{order_status == 3}}">待付款</view>
+                  </view>
+                </view>
+              </view>
+            </template>
+            <view wx:for="{{orders}}" class="list">
+              <template is="itmes" data="{{...item}}" />
+            </view>
+          </view>
+        </view>
+
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="warp">
+            <template name="itmesPay">
+              <navigator hover-class="navigator-hover">
+                <view class="imgs">
+                  <image src="{{order_img}}" class="in-img" background-size="cover" model="scaleToFill"></image>
+                </view>
+                <view class="infos">
+                  <view class="title">{{order_goods}}</view>
+                  <view>
+                    <view class="status" wx:if="{{order_status == 1}}">待发货</view>
+                    <view class="status" style='color:green' wx:if="{{order_status == 2}}">已发货！</view>
+                    <view class="status" style='color:black' wx:if="{{order_status == 3}}">待付款</view>
+                  </view>
+                </view>
+              </navigator>
+            </template>
+            <view wx:for="{{ordersPay}}" class="list">
+              <template is="itmesPay" data="{{...item}}" />
+            </view>
+          </view>
+        </view>
+
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+          <view class="warp">
+            <template name="itmesWaitToSend">
+              <navigator hover-class="navigator-hover">
+                <view class="imgs">
+                  <image src="{{order_img}}" class="in-img" background-size="cover" model="scaleToFill"></image>
+                </view>
+                <view class="infos">
+                  <view class="title">{{order_goods}}</view>
+                  <view>
+                    <view class="status" wx:if="{{order_status == 1}}">待发货</view>
+                    <view class="status" style='color:green' wx:if="{{order_status == 2}}">已发货！</view>
+                    <view class="status" style='color:black' wx:if="{{order_status == 3}}">待付款</view>
+                  </view>
+                </view>
+              </navigator>
+            </template>
+            <view wx:for="{{ordersWaitToSend}}" class="list">
+              <template is="itmesWaitToSend" data="{{...item}}" />
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">
+          <view class="warp">
+            <template name="itmesSend">
+              <navigator hover-class="navigator-hover">
+                <view class="imgs">
+                  <image src="{{order_img}}" class="in-img" background-size="cover" model="scaleToFill"></image>
+                </view>
+                <view class="infos">
+                  <view class="title">{{order_goods}}</view>
+                  <view>
+                    <view class="status" wx:if="{{order_status == 1}}">待发货</view>
+                    <view class="status" style='color:green' wx:if="{{order_status == 2}}">已发货！</view>
+                    <view class="status" style='color:black' wx:if="{{order_status == 3}}">待付款</view>
+                  </view>
+                </view>
+              </navigator>
+            </template>
+            <view wx:for="{{ordersSend}}" class="list">
+              <template is="itmesSend" data="{{...item}}" />
+            </view>
+          </view>
+        </view>
+
+
+
+      </view>
+    </view>
+  </view>
+</view>
+
+<view bindtap="loadMore" data-lastid="{{lastid}}" data-isfrist="{{isfrist}}" class="loadMore" style="display:{{moreHidden}}">加载更多</view>
+<toast hidden="{{toastHidden}}" bindchange="toastChange" duration="3000">{{msg}}</toast>
+<modal title="温馨提示" no-cancel hidden="{{confirmHidden}}" confirm-text="明确" bindconfirm="modalChange">你当前不在在WIFI网格下下，会产生流量费用</modal>

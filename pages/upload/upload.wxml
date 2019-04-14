@@ -1,0 +1,70 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+
+  <view class="weui-cells__title">话题内容</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <textarea class="weui-textarea" name="content" value='{{content}}' bindinput="listenercontent" placeholder="请输入话题内容" style="height: 3.3em" />
+        <view class="weui-textarea-counter">{{contentlength}}/300</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="page__bd">
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+
+              <view class="weui-uploader__title">图片上传</view>
+
+            </view>
+
+            <view class="weui-uploader__bd">
+
+              <block wx:for="{{imagesList}}" wx:key="*this">
+
+                <view class="weui-uploader__file">
+                  <view class="images-list">
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}"></image>
+                    <!-- <image class='chooseImageClose' src="../../resource/images/delete.png" data-index="{{index}}" bindtap='deleteImg'></image> -->
+                  </view>
+                </view>
+
+              </block>
+
+              <view class="weui-uploader__input-box">
+
+                <input class="weui-uploader__input js_file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif" multiple="" bindtap='uploader' name="images"></input>
+              </view>
+
+
+
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+
+    <view class="address">
+
+      <view bindtap="bindAddress">
+        <image class="biao" src="../../resource/images/address.png" mode="aspectFit"></image>
+        <text class="weizhi">{{addRessName?addRessName:'所在位置'}}
+                <input name="address" value="{{addRessName}}" type='text'/>
+            </text>
+        <image class="jiantou" src="../../resource/images/jt.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+  </view>
+
+  <button class="buttona" form-type="submit" bindtap='addMoment'>发布动态</button>
+
+
+</form>

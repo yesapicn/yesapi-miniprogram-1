@@ -1,0 +1,54 @@
+<view class="me-body">
+  <view class="me-title">
+    <view class="me-title-image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="me-title-nickname">
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+<navigator url="../../pages/mine/collect/collect" hover-class="navigator-hover">
+<button class="me-feedback">
+    <view>
+      <view class="me-collect-image">
+        <image src='../../resource/images/collect.jpg' style='width:30px;height:30px;'></image>
+      </view>
+      <view class="me-feedback-word">
+        订单
+      </view>
+    </view>
+  </button> 
+</navigator>
+<navigator url="../../pages/mine/shopcar/shopcar" hover-class="navigator-hover">
+<button class="me-feedback">
+    <view>
+      <view class="me-collect-image">
+        <image src='../../resource/images/shopcar.png' style='width:30px;height:30px;'></image>
+      </view>
+      <view class="me-feedback-word">
+        购物车
+      </view>
+    </view>
+  </button> 
+</navigator>
+<button class="me-feedback" open-type='getUserInfo' bindtap='openlocation'>
+    <view>
+      <view class="me-collect-image">
+        <image src='../../resource/images/local.png' style='width:30px;height:30px;'></image>
+      </view>
+      <view class="me-feedback-word">
+        地址
+      </view>
+    </view>
+  </button> 
+  <button class="me-feedback" open-type='contact'>
+    <view>
+      <view class="me-collect-image">
+        <image src='../../resource/images/phone.png' style='width:30px;height:30px;'></image>
+      </view>
+      <view class="me-feedback-word">
+        客服
+      </view>
+    </view>
+  </button> 
+</view>
