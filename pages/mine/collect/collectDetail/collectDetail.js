@@ -1,7 +1,7 @@
 import S_request from '../../../../utils/requestService.js';
 import * as utils from '../../../../utils/util.js';
 import CONFIG from '../../../../config.js';
-let okayapi = require('../../../../utils/okayapi.js')
+let yesapi = require('../../../../utils/yesapi.js')
 
 Page({
   data: {
@@ -46,8 +46,8 @@ Page({
 
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: (res) => {
         let data = res.data.data.list;
 

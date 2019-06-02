@@ -4,7 +4,7 @@ let util = require('./md5.js')
 let app = getApp();
 let DOMIAN = CONFIG[CONFIG.WX_ENV];
 //index.js
-let okayapi = require('../utils/okayapi.js')
+let yesapi = require('./yesapi.js')
 
 
 const getUserId = () => {
@@ -39,8 +39,8 @@ let S_request = {
 
       wx.request({
         header: utils.requestHeader(),
-        url: getApp().globalData.okayapiHost,
-        data: okayapi.enryptData(params),
+        url: getApp().globalData.yesApiHost,
+        data: yesapi.enryptData(params),
 
         success: (res) => {
           let data = res.data.data.list;
@@ -59,8 +59,8 @@ let S_request = {
           };
           wx.request({
             header: utils.requestHeader(),
-            url: "https://hn216.api.okayapi.com/",
-            data: okayapi.enryptData(secondParams),
+            url: app.globalData.yesApiHost,
+            data: yesapi.enryptData(secondParams),
             success: (res) => {
               let data = res.data.data.list;
 
@@ -99,8 +99,8 @@ let S_request = {
 
       wx.request({
         header: utils.requestHeader(),
-        url: "https://hn216.api.okayapi.com/",
-        data: okayapi.enryptData(params),
+        url: app.globalData.yesApiHost,
+        data: yesapi.enryptData(params),
         success: (res) => {
           let data = res.data.data.list;
           data.statusCode = CONFIG.CODE.REQUESTSUCCESS;
@@ -116,7 +116,7 @@ let S_request = {
     getMatchGoods: function (id, cb) {
       wx.request({
         header: utils.requestHeader(),
-        url: "https://hn216.api.okayapi.com/",
+        url: app.globalData.yesApiHost,
         data: {
           goods_id: id,
           user_id: getUserId()
@@ -134,7 +134,7 @@ let S_request = {
     getSameGoods: function (id, cb) {
       wx.request({
         header: utils.requestHeader(),
-        url: "https://hn216.api.okayapi.com/",
+        url: app.globalData.yesApiHost,
         data: {
           goods_id: id,
           user_id: getUserId()
@@ -268,8 +268,8 @@ let S_request = {
 
       wx.request({
         header: utils.requestHeader(),
-        url: getApp().globalData.okayapiHost,
-        data: okayapi.enryptData(params),
+        url: getApp().globalData.yesapiHost,
+        data: yesapi.enryptData(params),
         success: (res) => {
           let data = res.data.data.list;
 

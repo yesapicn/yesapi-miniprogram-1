@@ -80,8 +80,8 @@ App({
   globalData: {
     userInfo: null,
     userOpenId:null,
-    okayapiHost: "您的接口域名", // TODO: 配置成你所在的接口域名
-    okayApiAppKey: "您的appkey", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
-    okayApiAppSecrect: "您的appsecret" // TODO：改为你的APP_SECRECT
+    yesApiHost: "您的接口域名", // TODO: 配置成你所在的接口域名
+    yesApiAppKey: "您的appkey", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
+    yesApiAppSecret: "您的appsecret" // TODO：改为你的APP_SECRECT
   }
 });

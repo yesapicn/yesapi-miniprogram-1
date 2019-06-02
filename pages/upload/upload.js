@@ -1,7 +1,7 @@
 //index.js
 import S_request from '../../utils/requestService.js';
 import * as utils from '../../utils/util.js';
-let okayapi = require('../../utils/okayapi.js')
+let yesapi = require('../../utils/yesapi.js')
 //获取应用实例
 var app = getApp();
 var imgArr = []; //这个数组用来临时存储图片数据
@@ -199,8 +199,8 @@ Page({
     };
     wx.uploadFile({
       //for test
-      url: getApp().globalData.okayapiHost,
-      formData: okayapi.enryptData(paramsZero),
+      url: getApp().globalData.yesApiHost,
+      formData: yesapi.enryptData(paramsZero),
       filePath: that.data.imagesList[0],
       name: 'file',
       header: {
@@ -281,8 +281,8 @@ else{
     //插入登录的用户的相关信息到数据库
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: function(res) {
         wx.showToast({
           title: "发表成功！",

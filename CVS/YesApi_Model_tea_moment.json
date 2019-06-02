@@ -1,0 +1,147 @@
+{
+    "model_name": "tea_moment",
+    "model_desc": "小程序茶的朋友圈",
+    "img_url": "http:\/\/cdn7.okayapi.com\/CEE4B8A091578B252AC4C92FB4E893C3_20190313221428_9eec876ab601e54c260ad24af76797df.jpeg",
+    "fields": [
+        {
+            "id": "38a51180aa3b9d5505cfefd00a2012f6",
+            "field_name": "moment_nickname",
+            "field_type": "varchar",
+            "field_length": "50",
+            "field_default": null,
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "用户名"
+        },
+        {
+            "id": "1f3d78630abe0364bf49637c260bea67",
+            "field_name": "moment_content",
+            "field_type": "varchar",
+            "field_length": "1024",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈内容"
+        },
+        {
+            "id": "4c91b1384b6eda9b494b8e03b82f1d4f",
+            "field_name": "moment_createtime",
+            "field_type": "varchar",
+            "field_length": "30",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "发布时间，默认为当前时间"
+        },
+        {
+            "id": "3f51059c233f6761eb09c17048f0863e",
+            "field_name": "moment_like",
+            "field_type": "int",
+            "field_length": "10",
+            "field_default": "0",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈点赞数"
+        },
+        {
+            "id": "e8c4152d93251f4ade30c7c257204510",
+            "field_name": "moment_picture1",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片1"
+        },
+        {
+            "id": "54edf57b804f4006f3ed0deb2cef9324",
+            "field_name": "moment_picture2",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片2\r\n"
+        },
+        {
+            "id": "0779d1028368e8f4b1728961e53ec381",
+            "field_name": "moment_picture3",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片3"
+        },
+        {
+            "id": "9ca82c9408a36f87b4b04fcf7eebeceb",
+            "field_name": "moment_picture4",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片4"
+        },
+        {
+            "id": "9a02bde4abe3adce9f8fa892b098a0b4",
+            "field_name": "moment_picture5",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片5"
+        },
+        {
+            "id": "715057c205c4ac6c904387d6b941c3f1",
+            "field_name": "moment_picture6",
+            "field_type": "varchar",
+            "field_length": "255",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "朋友圈图片6"
+        },
+        {
+            "id": "5984de171a7829878eca427ebc2935d3",
+            "field_name": "moment_lat",
+            "field_type": "double",
+            "field_length": null,
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "纬度"
+        },
+        {
+            "id": "e35c2fba09d04ffec479062ba54ceecd",
+            "field_name": "moment_lng",
+            "field_type": "double",
+            "field_length": null,
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "经度"
+        },
+        {
+            "id": "b3102cd493b05401e9dcfc30369c57d8",
+            "field_name": "moment_place",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": null,
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "位置描述"
+        },
+        {
+            "id": "e1f01d2069c8f1b2248774b96ee8130e",
+            "field_name": "moment_headimg",
+            "field_type": "varchar",
+            "field_length": "200",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "用户头像"
+        }
+    ]
+}

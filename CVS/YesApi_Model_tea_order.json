@@ -1,0 +1,137 @@
+{
+    "model_name": "tea_order",
+    "model_desc": "小程序茶的订单表",
+    "img_url": "",
+    "fields": [
+        {
+            "id": "e3dc14ed9983d99e9b99f9646cdb0a42",
+            "field_name": "order_buyer",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "购买者"
+        },
+        {
+            "id": "c90dbd7a3a49367227d8e06ff8386bd9",
+            "field_name": "order_number",
+            "field_type": "int",
+            "field_length": "15",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "unique",
+            "field_desc": "订单号（流水号，唯一）"
+        },
+        {
+            "id": "4faa086e44a0e0950a852962ebcda74d",
+            "field_name": "order_time",
+            "field_type": "varchar",
+            "field_length": "30",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "下单时间"
+        },
+        {
+            "id": "4d735815dcc27b283f27c13709ca0ad6",
+            "field_name": "order_status",
+            "field_type": "int",
+            "field_length": null,
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "订单状态（0表示取消订单，1表示进行中，2表示已完成，3待付款）"
+        },
+        {
+            "id": "3abb34f15ddec7d778210d4cccd5194a",
+            "field_name": "order_location",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "订单送货地址"
+        },
+        {
+            "id": "03436ee02dd2a842475fefa7c889be05",
+            "field_name": "order_price",
+            "field_type": "int",
+            "field_length": null,
+            "field_default": "1",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "商品单价（单位元）"
+        },
+        {
+            "id": "6c4fc3d45b4a3ac3b53ce4f336f5fea9",
+            "field_name": "order_goods",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "购买内容与规格参数"
+        },
+        {
+            "id": "f4231148cdfe71ed86e8e09e67a8ba23",
+            "field_name": "order_remark",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "订单备注"
+        },
+        {
+            "id": "c34e28787da7712ec437061ebb092300",
+            "field_name": "order_mobile",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "购买者联系方式"
+        },
+        {
+            "id": "38f4b39192646fb7ba43487fa80316a4",
+            "field_name": "order_identify",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "用户唯一标识"
+        },
+        {
+            "id": "fb261a06e52f51397d04fb3693e7c082",
+            "field_name": "order_goods_num",
+            "field_type": "int",
+            "field_length": null,
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "购买数量"
+        },
+        {
+            "id": "1a1fdb1dc1507de037d5efe2bc888c09",
+            "field_name": "order_good_id",
+            "field_type": "int",
+            "field_length": null,
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "no",
+            "field_desc": "商品id"
+        },
+        {
+            "id": "6e85de59660a0c3ec15b0aa5348e7f74",
+            "field_name": "order_img",
+            "field_type": "varchar",
+            "field_length": "150",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "封面照片"
+        }
+    ]
+}

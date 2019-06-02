@@ -3,7 +3,7 @@
 import S_request from '../../utils/requestService.js';
 import CONFIG from '../../config.js';
 import * as utils from '../../utils/util.js';
-let okayapi = require('../../utils/okayapi.js')
+let yesapi = require('../../utils/yesapi.js')
 let app = getApp()
 let [curPageNumber, curPageRequsetNumber] = [1, 1];//设置当前页面数量,请求数量
 
@@ -74,8 +74,8 @@ Page({
 
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: (res) => {
         let data = res.data.data.list;
 
@@ -157,8 +157,8 @@ Page({
 
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: (res) => {
         let data = res.data.data.list;
 

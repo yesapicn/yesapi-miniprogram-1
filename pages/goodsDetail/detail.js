@@ -3,7 +3,7 @@ let app = getApp();
 import S_request from '../../utils/requestService.js';
 import * as utils from '../../utils/util.js';
 let curPageRequsetNumber = 3; //设置当前页面请求数量
-let okayapi = require('../../utils/okayapi.js')
+let yesapi = require('../../utils/yesapi.js')
 
 Page({
   data: {
@@ -67,8 +67,8 @@ Page({
 
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: (res) => {
         let data = res.data.data.list;
 
@@ -160,8 +160,8 @@ Page({
     //插入登录的用户的相关信息到数据库
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
       success: function(res) {
         wx.showToast({
           title: "加入购物车成功！",
@@ -221,8 +221,8 @@ Page({
       //插入登录的用户的相关信息到数据库
       wx.request({
         header: utils.requestHeader(),
-        url: getApp().globalData.okayapiHost,
-        data: okayapi.enryptData(params),
+        url: getApp().globalData.yesApiHost,
+        data: yesapi.enryptData(params),
         success: function(res) {
           wx.showToast({
             title: "下单成功！",
@@ -247,8 +247,8 @@ Page({
 
           wx.request({
             header: utils.requestHeader(),
-            url: getApp().globalData.okayapiHost,
-            data: okayapi.enryptData(params),
+            url: getApp().globalData.yesApiHost,
+            data: yesapi.enryptData(params),
 
             success: (res) => {
               console.log(res)

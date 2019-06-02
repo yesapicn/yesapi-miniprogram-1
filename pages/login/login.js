@@ -1,7 +1,7 @@
 let app = getApp();
 import CONFIG from '../../config.js';
 import * as utils from '../../utils/util.js';
-let okayapi = require('../../utils/okayapi.js');
+let yesapi = require('../../utils/yesapi.js');
 
 Page({
   data: {
@@ -27,6 +27,7 @@ Page({
                   code = res.code //返回code
 
                   wx.request({
+                    //换成自己的小程序的openid以及密码
                     url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx9dd79889b1348c3a&secret=c0ff19403b5a206bf0bf537370dc5752&js_code=' + code + '&grant_type=authorization_code',
                     data: {},
                     header: {
@@ -91,8 +92,8 @@ Page({
               //插入登录的用户的相关信息到数据库
               wx.request({
                 header: utils.requestHeader(),
-                url: getApp().globalData.okayapiHost,
-                data: okayapi.enryptData(params),
+                url: getApp().globalData.yesApiHost,
+                data: yesapi.enryptData(params),
                 success: function (res) {
                   console.log(that.data.openid)
                 },

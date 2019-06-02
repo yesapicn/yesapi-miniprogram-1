@@ -41,6 +41,7 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190410233038109.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjkzMjM2OQ==,size_16,color_FFFFFF,t_70)
 + 现在离完成整个部署只差**填充后端数据**了！
 + 打开源代码目录下CSV文件夹里modelBulid.csv。可以查看本示例所需要的六个模型，在小白开放平台建立对应的模型，添加相应字段。
++ 或者将里面的json文件通过导入模型一键导入到自己的小白账号哦。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019041112331355.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjkzMjM2OQ==,size_16,color_FFFFFF,t_70)
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411123403497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjkzMjM2OQ==,size_16,color_FFFFFF,t_70)
@@ -57,7 +58,10 @@
 + 接下来点击开发者工具-编译，即可看到轮播图已经成功调用啦！！！（您的小程序已经成功调用出放在小白数据库的数据了）
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2019041112543320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjkzMjM2OQ==,size_16,color_FFFFFF,t_70)
 >如果用户模型也建好，细心的同学会发现tea_user里面也已经拿到了登录的人的微信昵称以及openID，新用户登录这个小程序并且授权，就会新增一条数据。（微信的openID是微信用户唯一标识符，如有需求也可以增加省份，语言，用户头像等字段记录用户信息，调整模型跟pages/login.js代码即可）
+
+>注意要改动login.js里面的appid&secret，换成自己的小程序appid&secret
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190411130107303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjkzMjM2OQ==,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](http://cdn7.okayapi.com/0D19F4F8568B4232213F87FC45C03253_20190601142658_dd1fd1289482b5d0cf269365e6575766.png)
 + 接下来根据CSV文件夹里的tea.csv按操作添加相应的数据即可拥有自己的小程序啦（小白会员可直接用该csv文件导入到数据库哦（疯狂暗示）），tea_user，tea_order,tea_shopcar以及tea_moment都不用添加数据，下订单，发朋友圈等操作会自动添加。
 
 # 演示效果

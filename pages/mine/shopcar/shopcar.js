@@ -1,7 +1,7 @@
 //lists.js
 
 import * as utils from '../../../utils/util.js';
-let okayapi = require('../../../utils/okayapi.js')
+let yesapi = require('../../../utils/yesapi.js')
 //获取应用实例
 var app = getApp()
 Page({
@@ -49,8 +49,8 @@ Page({
 
     wx.request({
       header: utils.requestHeader(),
-      url: getApp().globalData.okayapiHost,
-      data: okayapi.enryptData(params),
+      url: getApp().globalData.yesApiHost,
+      data: yesapi.enryptData(params),
 
       success: (res) => {
         let data = res.data.data.list;

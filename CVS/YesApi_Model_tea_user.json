@@ -1,0 +1,47 @@
+{
+    "model_name": "tea_user",
+    "model_desc": "注册小程序的用户\r\n",
+    "img_url": "",
+    "fields": [
+        {
+            "id": "4ccb8f3c85493594d196a64e575ba6d2",
+            "field_name": "user_nickname",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "用户名"
+        },
+        {
+            "id": "756087d195bddcfe0aabc0dfe01466c6",
+            "field_name": "user_mobile",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "用户手机"
+        },
+        {
+            "id": "191e6a1e8b6c11fd4885e9fe56468ba0",
+            "field_name": "user_wechat",
+            "field_type": "varchar",
+            "field_length": "256",
+            "field_default": "",
+            "field_is_null": "1",
+            "field_index": "no",
+            "field_desc": "用户微信账号"
+        },
+        {
+            "id": "d240cc721b3b2f359cf0bc20000adcb3",
+            "field_name": "user_identify",
+            "field_type": "varchar",
+            "field_length": "50",
+            "field_default": "",
+            "field_is_null": "0",
+            "field_index": "unique",
+            "field_desc": "用户的唯一标识"
+        }
+    ]
+}
