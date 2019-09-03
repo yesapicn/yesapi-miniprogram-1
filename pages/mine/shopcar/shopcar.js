@@ -32,6 +32,17 @@ Page({
 
   },
 
+  //跳转商品首页
+  showGoodsPage: function (e) {
+
+    let data = e.currentTarget.dataset;
+
+    wx.reLaunch({
+      url: "../../index/index?id=1"
+    })
+
+  },
+
   loadData: function (lastid) {
     //显示出加载中的提示
     this.setData({
@@ -43,7 +54,7 @@ Page({
 
     let params = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_shopcar", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_shopcar", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"user_identify\",\"=\",\"" + getApp().globalData.openid + "\"]]",
     };
 
@@ -78,8 +89,6 @@ Page({
 
   },
 
-  loadMore: function (event) {
-  },
   onLoad: function () {
     var that = this
     this.loadData(0);

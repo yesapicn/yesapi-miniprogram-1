@@ -42,10 +42,14 @@ Page({
   },
 
   //加载完成
-  onLoad: function() {
+  onLoad: function(e) {
     this.setData({
       systemInfo: app.getSystemInfo()
     });
+    
+    if(e.id == 1){
+      curPageNumber = 1
+    }
 
     //通过requestService实例对象拿到数据
     S_request.index.getGoodsList(curPageNumber, (goodsData, swiperData) => {
@@ -65,6 +69,7 @@ Page({
         goodsData: goodsData,
         swiperData: swiperData,
       });
+
 
       curPageNumber += 1;
       app.MLoading(this, curPageRequsetNumber);

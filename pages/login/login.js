@@ -84,7 +84,7 @@ Page({
               });
               let params = {
                 s: "App.Table.CheckCreate", // 必须，待请求的接口服务名称
-                model_name: "tea_user",
+                model_name: "yesapi_tea_user",
                 check_field: "user_identify",
                 //Jason格式传入的写法
                 data: "{\"user_nickname\": \"" + e.detail.userInfo.nickName + "\",\"user_identify\": \"" + that.data.openid + "\"}",
@@ -108,7 +108,7 @@ Page({
           })
         }
       })
-      
+
       //授权成功后，跳转进入小程序首页
       wx.switchTab({
         url: '/pages/index/index'

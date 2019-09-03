@@ -37,7 +37,7 @@ Page({
   orderDetailInit: function (e) {
     let params = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"id\",\"=\",\"" + e.id + "\"]]",
     };
 
@@ -53,7 +53,7 @@ Page({
 
         list[0].pages[0] = data[0].order_goods;
         list[0].pages[1] = "x" + data[0].order_goods_num;
-        list[0].pages[2] = "￥" + data[0].order_price; 
+        list[0].pages[2] = "￥" + data[0].order_price;
         list[0].pages[3] = "备注:" + data[0].order_remark;
 
 

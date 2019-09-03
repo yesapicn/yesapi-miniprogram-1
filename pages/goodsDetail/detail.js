@@ -58,7 +58,7 @@ Page({
   goodsDetailInit: function(e) {
     let params = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"id\",\"=\",\"" + e.id + "\"]]",
     };
 
@@ -146,12 +146,12 @@ Page({
     console.log(e.currentTarget.dataset.id);
     let params = {
       s: "App.Table.Create", // 必须，待请求的接口服务名称
-      model_name: "tea_shopcar",
+      model_name: "yesapi_tea_shopcar",
       //Jason格式传入的写法
       data: "{\"user_identify\": \"" + getApp().globalData.openid +
         "\",\"tea_id\": \"" + e.currentTarget.dataset.id +
         "\",\"car_identify_new\": \"" + getApp().globalData.openid + e.currentTarget.dataset.id +
-        "\",\"good_img\": \"" + e.currentTarget.dataset.tea_titlepage + 
+        "\",\"good_img\": \"" + e.currentTarget.dataset.tea_titlepage +
         "\",\"good_title\": \"" + e.currentTarget.dataset.tea_name +
         "\",\"good_price\": \"" + e.currentTarget.dataset.tea_price +"\"}",
     };
@@ -200,7 +200,7 @@ Page({
 
       let params = {
         s: "App.Table.Create", // 必须，待请求的接口服务名称
-        model_name: "tea_order",
+        model_name: "yesapi_tea_order",
         //Jason格式传入的写法
         data: "{\"order_buyer\": \"" + this.data.addressInfo.userName +
           "\",\"order_number\": \"" + timestamp / 1000 +
@@ -241,7 +241,7 @@ Page({
 
           let params = {
             s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-            model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+            model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
             where: "[[\"order_identify\",\"=\",\"" + getApp().globalData.openid + "\"]]",
           };
 

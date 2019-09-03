@@ -24,14 +24,14 @@ let S_request = {
 
       let params = {
         s: "App.Table.FreeQuery",	// 必须，待请求的接口服务名称
-        model_name: "tea",	  // 可选，根据接口文档，补充更多接口参数
+        model_name: "yesapi_tea",	  // 可选，根据接口文档，补充更多接口参数
         where: "[[\"id\",\">\",\"0\"]]",
         page: page,
         perpage: "5"
       };
       let secondParams = {
         s: "App.Table.FreeQuery",	// 必须，待请求的接口服务名称
-        model_name: "tea_swiper",	  // 可选，根据接口文档，补充更多接口参数
+        model_name: "yesapi_tea_swiper",	  // 可选，根据接口文档，补充更多接口参数
         where: "[[\"id\",\">\",\"0\"]]",
         page: 1,
         perpage: "5"
@@ -93,7 +93,7 @@ let S_request = {
     getGoods: function (id, cb) {
       let params = {
         s: "App.Table.FreeQuery",	// 必须，待请求的接口服务名称
-        model_name: "tea",	  // 可选，根据接口文档，补充更多接口参数
+        model_name: "yesapi_tea",	  // 可选，根据接口文档，补充更多接口参数
         where: "[[\"id\",\"=\",\"" + id + "\"]]",
       };
 
@@ -260,7 +260,7 @@ let S_request = {
 
       let params = {
         s: "App.Table.FreeQuery",	// 必须，待请求的接口服务名称
-        model_name: "tea_moment",	  // 可选，根据接口文档，补充更多接口参数
+        model_name: "yesapi_tea_moment",	  // 可选，根据接口文档，补充更多接口参数
         where: "[[\"id\",\">\",\"0\"]]",
         page: 1,
         perpage: "5"
@@ -286,7 +286,7 @@ let S_request = {
           }
           console.log(moments)
           typeof cb == "function" && cb(moments);
-    
+
 
           moments.statusCode = CONFIG.CODE.REQUESTSUCCESS;
         },

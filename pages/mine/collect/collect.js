@@ -38,7 +38,7 @@ Page({
 
     let params = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"order_identify\",\"=\",\"" + getApp().globalData.openid + "\"]]",
     };
 
@@ -80,7 +80,7 @@ Page({
 
     let paramsPay = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"order_identify\",\"=\",\"" + getApp().globalData.openid + "\"],[\"order_status\",\"=\",\"3\"]]",
     };
 
@@ -121,7 +121,7 @@ Page({
 
     let paramsWaitToSend = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"order_identify\",\"=\",\"" + getApp().globalData.openid + "\"],[\"order_status\",\"=\",\"1\"]]",
     };
 
@@ -162,7 +162,7 @@ Page({
 
     let paramsSend = {
       s: "App.Table.FreeQuery", // 必须，待请求的接口服务名称
-      model_name: "tea_order", // 可选，根据接口文档，补充更多接口参数
+      model_name: "yesapi_tea_order", // 可选，根据接口文档，补充更多接口参数
       where: "[[\"order_identify\",\"=\",\"" + getApp().globalData.openid + "\"],[\"order_status\",\"=\",\"2\"]]",
     };
 

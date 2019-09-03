@@ -22,7 +22,6 @@ App({
     if(this.globalData.systemInfo){
       console.log('获取系统信息');
       return this.globalData.systemInfo;
-      // typeof cb == "function" && cb(this.globalData.systemInfo);
     }else{
         console.log('重新获取系统信息')
         wx.getSystemInfo({
@@ -30,7 +29,6 @@ App({
             console.log('info',res);
             this.globalData.systemInfo = res;
             return this.globalData.systemInfo;
-            // typeof cb == "function" && cb(_this.globalData.systemInfo);
           }
         })
       }
@@ -80,8 +78,8 @@ App({
   globalData: {
     userInfo: null,
     userOpenId:null,
-    yesApiHost: "您的接口域名", // TODO: 配置成你所在的接口域名
-    yesApiAppKey: "您的appkey", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
-    yesApiAppSecret: "您的appsecret" // TODO：改为你的APP_SECRECT
+    yesApiHost: "您的接口域名", // TODO: 配置成你所在的接口域名记得加https
+    yesApiAppKey: "您的APP_KEY", // TODO：改为你的APP_KEY 在http://open.yesapi.cn/?r=App/Mine寻找
+    yesApiAppSecret: "您的APP_SECRET" // TODO：改为你的APP_SECRET
   }
 });

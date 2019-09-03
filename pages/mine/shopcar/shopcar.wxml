@@ -1,11 +1,6 @@
-<!--order.wxml-->
+
 
 <view class="warp">
-  <!--<open-data type="userAvatarUrl"></open-data>
-<open-data type="userNickName"></open-data>-->
-
-
-  <!--文章列表模板 begin-->
   <template name="itmes">
     <view data-id='{{tea_id}}' bindtap="showGoodsDetailPage" hover-class="navigator-hover">
       <view class="imgs">
@@ -19,12 +14,21 @@
       </view>
     </view>
   </template>
-  <!--文章列表模板 end-->
 
-  <!--循环输出列表 begin-->
+
+ <view style='text-align:center;margin-top:40%;' wx:if="{{shopcar.length === 0}}">
+    购物车空空如也
+    <button bindtap='showGoodsPage'>
+        前往逛gai!
+    </button> 
+ </view>
+ 
+ <view wx:else>
   <view wx:for="{{shopcar}}" class="list">
     <template is="itmes" data="{{...item}}" />
   </view>
+ </view>
+ 
 
 
   <view bindtap="loadMore" data-lastid="{{lastid}}" data-isfrist="{{isfrist}}" class="loadMore" style="display:{{moreHidden}}">加载更多</view>

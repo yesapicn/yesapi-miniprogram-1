@@ -159,7 +159,7 @@ Page({
         that.setData({
           addRessName: lb.name
         })
-        //console.debug(that.data.addressData)  
+        //console.debug(that.data.addressData)
       },
       cancel: function(lb) // 取消选择
       {
@@ -243,7 +243,7 @@ Page({
     if (that.data.addRessName == undefined || that.data.addRessName == ''){
       var params = {
         s: "App.Table.Create", // 必须，待请求的接口服务名称
-        model_name: "tea_moment",
+        model_name: "yesapi_tea_moment",
         //Jason格式传入的写法
         data: "{\"moment_nickname\": \"" + that.data.userInfo.nickName +
           "\",\"moment_content\": \"" + that.data.content +
@@ -260,7 +260,7 @@ Page({
 else{
       var params = {
         s: "App.Table.Create", // 必须，待请求的接口服务名称
-        model_name: "tea_moment",
+        model_name: "yesapi_tea_moment",
         //Jason格式传入的写法
         data: "{\"moment_nickname\": \"" + that.data.userInfo.nickName +
           "\",\"moment_content\": \"" + that.data.content +
@@ -318,7 +318,7 @@ else{
       that.addContent();
       setTimeout(function () {
         wx.navigateBack({
-          
+
         })
       }, 2200)
     }
